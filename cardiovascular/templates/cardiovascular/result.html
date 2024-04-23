@@ -1,0 +1,51 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'cvd.css' %}">
+    <title>CVD</title>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-5">
+                <h2>Given Information</h2>
+                {% for i,j in zipp %}
+                    <p>{{i}}: {{j}}</p>
+                {% endfor %}
+            </div>
+            <div class="col-md-5 mt-3">
+                <div>
+                    <h2>Corresponding Values</h2>
+                    <p>Sex: Male(0),   Female(1)</p>
+                    <p>Chest Pain Type: Atypical Angina(0),   Non-Anginal(1),  PainAsymptomatic(2),  Typical Angina(3)</p>
+                    <p>Resting ECG: Normal(0),  ST(1),  LVH(2)</p>
+                    <p>Exercise Induced Angina: No(0),  Yes(1)</p>
+                    <p>ST Slope: Up(0),  Flat(1),  Down(2)</p>
+                </div>
+                <div class="Result">
+                    <h2>Result</h2>
+                    {% if result == 1 %}
+                        <p> Cardiovascular: <b style="color: red;">Positive (+ve)</b> </p>
+                        <p>Condition: <b style="color: red;">Critical</b></p>
+                    {% else %}
+                        <p> Cardiovascular: <b style="color: green;">Negative (-ve)</b> </p>
+                        <p>Condition: <b style="color: green;">Normal</b></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

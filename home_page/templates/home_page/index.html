@@ -1,0 +1,38 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'home_page.css' %}">
+    <title>Home Page</title>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-7 header-text">
+                <h1 class=>Multiple Diseases Prediction Models</h1>
+                <a href="{% url 'cardiovascular:cvd' %}">
+                    <div class="buttons">
+                        <button class="btn">
+                            <p data-text="Enter to Check" data-title="Cardiovasculer Disease"></p>
+                        </button>
+                    </div>
+                </a>
+                <a href="{% url 'breast_cancer:breast_cancer' %}">
+                    <div class="buttons">
+                        <button class="btn">
+                            <p data-text="Enter to Check" data-title="Breast Cancer"></p>
+                        </button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

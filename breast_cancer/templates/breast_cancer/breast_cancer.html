@@ -1,0 +1,67 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'cvd.css' %}">
+    <title>CVD</title>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Please Required Information Below</h2>
+                <form action="{% url 'breast_cancer:result' %}">
+                    {% csrf_token %}
+                    <label>Clump Thickness:</label>
+                        <input type="number" name="clump_thickness" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+                    
+                    <label>Uniformity of Cell Size:</label>
+                        <input type="number" name="uniformity_of_cell_size" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+                    
+                    <!-- <label>Uniformity of Cell Shape:</label>
+                    <input type="number" name="uniformity_of_cell_shape" min="1" max="10" required style="margin-top: 10px;">
+                    <br> -->
+                    
+                    <label>Marginal Adhesion:</label>
+                        <input type="number" name="marginal_adhesion" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+                    
+                    <label>Single Epithelial Cell Size:</label>
+                        <input type="number" name="single_epithelial_cell_size" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+                    
+                    <label>Bare Nuclei:</label>
+                        <input type="number" name="bare_nuclei" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+                    
+                    <label>Bland Chromatin:</label>
+                        <input type="number" name="bland_chromatin" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+                    
+                    <label>Normal Nucleoli:</label>
+                        <input type="number" name="normal_nucleoli" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+                    
+                    <label>Mitoses:</label>
+                        <input type="number" name="mitoses" min="1" max="10" required style="margin-top: 10px;">
+                    <br>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
